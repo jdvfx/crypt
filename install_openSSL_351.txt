@@ -1,0 +1,18 @@
+# install openSSL-3.5.1 from source on Fedora 42
+Version 3.5 will be supported until 2030-04-08 (LTS)
+
+wget https://www.openssl.org/source/openssl-3.5.1.tar.gz
+tar -xvzf openssl-3.5.1.tar.gz
+cd openssl-3.5.1
+
+# dependencies
+sudo dnf install perl-Pod-Html perl-File-Compare perl-IPC-Cmd perl-FindBin
+
+./config --prefix=/opt/openssl-3.5 --openssldir=/opt/openssl-3.5
+make -j$(nproc)
+sudo make install
+
+# add to .bashrc
+export PATH="/opt/openssl-3.5/bin:$PATH"
+export LD_LIBRARY_PATH=/opt/openssl-3.5/lib64:$LD_LIBRARY_PATH
+
