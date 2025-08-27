@@ -10,14 +10,14 @@ INPUT="$1"
 OUTPUT="${INPUT}_dec"
 
 # Prompt user for iteration count
-read -p "Enter PBKDF2 iteration count: " ITER
+read -p "key (iteration count): " ITER
 
 # Set default if input is empty
 ITER=${ITER:-10000}
 
 # Validate input is a number
 if ! [[ "$ITER" =~ ^[0-9]+$ ]]; then
-  echo "Error: Iteration count must be a number."
+  echo "Error: key (iteration count) must be a number."
   exit 1
 fi
 

@@ -14,9 +14,11 @@ the PBKDF2 iteration count can be used as a key (optional)<br>
 encrypt
 
 	/$ bash enc.sh myfile.txt
-	/$ key:
+	/$ key (iteration count):
 	{your_iteration_count}
-	/$ password:
+	/$ enter AES-256-CBC encryption password:
+	{your_password}
+	/$Verifying - enter AES-256-CBC encryption password:
 	{your_password}
 
 -encrypt to a file named: <code>myfile.txt_enc</code>
@@ -24,9 +26,9 @@ encrypt
 decrypt
 
 	/$ bash dec.sh myfile.txt_enc
-	/$ key:
+	/$ key (iteration count):
 	{your_iteration_count}
-	/$ password:
+	/$ enter AES-256-CBC decryption password:
 	{your_password}
 
 -decrypt to a file named: <code>myfile.txt_enc_dec</code>
