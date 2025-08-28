@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 INPUT="$1"
-OUTPUT="${INPUT}_dec"
+OUTPUT="${INPUT}_enc"
 
 # Prompt user for iteration count
 read -p "key (iteration count): " ITER
