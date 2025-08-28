@@ -21,8 +21,10 @@ if ! [[ "$ITER" =~ ^[0-9]+$ ]]; then
   exit 1
 fi
 
+mkdir -p enc
+
 # Encrypt using AES-256 with PBKDF2
-openssl enc -aes-256-cbc -pbkdf2 -iter "$ITER" -in "$INPUT" -out "$OUTPUT"
+openssl enc -aes-256-cbc -pbkdf2 -iter "$ITER" -in "$INPUT" -out enc/"$OUTPUT"
 
 echo "Encrypted: $OUTPUT"
 
